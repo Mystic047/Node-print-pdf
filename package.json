@@ -6,7 +6,9 @@
     "fs": "^0.0.1-security",
     "mysql": "^2.18.1",
     "pdfkit": "^0.14.0",
-    "puppeteer": "^22.4.1"
+    "puppeteer": "^22.4.1",
+    "sequelize": "^6.37.1",
+    "sqlite3": "^5.1.7"
   },
   "name": "nodeprintpdf",
   "version": "1.0.0",

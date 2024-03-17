@@ -1,108 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Employee Data</title>
-    <style>
-      /* Ensure the font file is hosted somewhere accessible by your server */
-      @font-face {
-        font-family: "THSarabunNew";
-        src: url("/path-to-fonts/THSarabunNew.ttf") format("truetype");
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>Employee Data</title>
+  <style>
+    /* Add your table styling here */
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>ลำดับ</th>
+        <th class="EmployeeName">รายชื่อ</th>
+        <th>จำนวนวัน</th>
+        <th>มาสายช่วงเช้าเกิน 8:30</th>
+        <th>สายช่วงบ่ายเกิน 13:05</th>
+        <th>วันที่มาทำงานทั้งหมด</th>
+        <th>วันลา</th>
+        <th>จำนวนวันที่มาทำงาน</th>
+        <th>ลายมือชื่อ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% employees.forEach(function(employee) { %>
+      <tr>
+        <td><%= employee['Order'] %></td>
+        <td class="EmployeeName"><%= employee['EmployeeName'] %></td>
+        <td><%= employee['จำนวนวัน'] %></td>
+        <td><%= employee['มาสายช่วงเช้าเกิน 8:30'] %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
 
-      body,
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-left: auto; /* Center table horizontally */
-        margin-right: auto;
-        margin-top: 1cm;
-        border-spacing: 0; /* Remove spacing between cells */
-      }
-
-      @page {
-        margin: 0.5cm; /* Adjust margins as needed */
-      }
-
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-        border-right: 1px solid #ddd;
-        border-top: 1px solid #ddd;
-        border-left: 1px solid #ddd;
-      }
-
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-      }
-
-      th {
-        font-weight: normal;
-      }
-      h1,
-      h2,
-      h3 {
-        font-weight: normal;
-      }
-      .container {
-        padding-left: 20px; /* Adjust as needed for space on the left */
-        padding-right: 20px; /* Adjust as needed for space on the right */
-      }
-
-      th.EmployeeName,
-      td.EmployeeName {
-        min-width: 150px; /* Set a minimum width or a fixed width for Employee Name column */
-      }
-
-      table {
-        width: calc(
-          100% - 40px
-        ); /* This will subtract the padding from the total width */
-        margin-left: auto; /* These two lines center the table */
-        margin-right: auto;
-        margin-top: auto;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="outline" id="content">
-      <div class="container">
-        <table>
-          <thead>
-            <tr>
-              <th>ลำดับ</th>
-              <th class="EmployeeName">รายชื่อ</th>
-              <th>จำนวนวัน</th>
-              <th class="Latem">สายช่วงเช้าเกิน 8:30</th>
-              <th class="LateE">สายช่วงบ่ายเกิน 13:05</th>
-              <th>วันที่มาทำงานทั้งหมด</th>
-              <th>วันลา</th>
-              <th>จำนวนวันที่มาทำงาน</th>
-              <th>ลายมือชื่อ</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% employees.forEach(function(employee) { %>
-            <tr>
-              <td><%= employee['Order'] %></td>
-              <td class="EmployeeName"><%= employee['EmployeeName'] %></td>
-              <td><%= employee['จำนวนวัน'] %></td>
-              <td><%= employee['มาสายช่วงเช้าเกิน 8:30'] %></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <% }); %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </body>
+</body>
 </html>

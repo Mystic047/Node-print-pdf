@@ -1,0 +1,25 @@
+.form-select {
+
+    max-width: 400px;
+    max-height: auto;
+
+}
+
+.form-group {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.form-group{
+    display: grid;
+}
+
+.form-select{
+    display: grid;
+}

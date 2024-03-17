@@ -7,6 +7,7 @@ const db = mysql.createConnection({
     database: 'hostpital_combine_final'
 });
 
+
 db.connect((err) => {
     if (err) throw err;
     console.log('Connected to MySQL');

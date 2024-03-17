@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="CSS/emp.css" />
+  </head>
+  <body>
+    <%- include('component/navbar'); -%>
+    <form action="/empdata/:month/:department" method="GET" id="empdata-form">
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <label for="select-month">เลือกเดือนที่จะค้นหา:</label>
+          <select id="select-month" class="form-select" aria-label="Default select example">
+            <option selected>ทั้งหมด</option>
+            <option value="1">มกราคม</option>
+            <option value="2">กุมภาพันธ์</option>
+            <option value="3">มีนาคม</option>
+            <option value="4">เมษายน</option>
+            <option value="5">พฤษภาคม</option>
+            <option value="6">มิถุนายน</option>
+            <option value="7">กรกฎาคม</option>
+            <option value="8">สิงหาคม</option>
+            <option value="9">กันยายน</option>
+            <option value="10">ตุลาคม</option>
+            <option value="11">พฤศจิกายน</option>
+            <option value="12">ธันวาคม</option>
+          </select>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <label for="select-department">เลือกแผนกที่จะค้นหา:</label>
+          <select id="select-department" class="form-select" aria-label="Default select example">
+            <option value="">ทั้งหมด</option>
+            <% departments.forEach(function(department) { %>
+            <option value="<%= department.Department %>">
+              <%= department.Department %>
+            </option>
+            <% }); %>
+          </select>
+        </div>
+        <div class="form-group col-sm-12">
+          <button type="submit">ค้นหา</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
+<script>
+  document.getElementById('empdata-form').addEventListener('submit', async (event) => {
+      event.preventDefault(); // Prevent the default form submission
+      const month = document.getElementById('select-month').value;
+      const department = document.getElementById('select-department').value;
+      const response = await fetch(`/empdata/${month}/${department}`);
+      const data = await response.json();
+      console.log(data); // Handle the response data as needed
+  });
+</script>
