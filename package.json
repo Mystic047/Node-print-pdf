@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "pdfkit": "^0.14.0",
+    "puppeteer": "^22.4.1"
+  },
+  "name": "nodeprintpdf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
